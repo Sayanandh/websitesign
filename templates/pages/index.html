@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <div class="mb-12">
+        <p class="text-green-500 font-medium mb-4">Sign Language Interpretation</p>
+        <h1 class="text-4xl font-bold mb-4">Breaking Barriers with<br>Sign Language Recognition</h1>
+        <p class="text-gray-600 mb-8">Upload images, videos, or use your camera for real-time sign language interpretation and bridge communication gaps.</p>
+        
+        <div class="flex gap-4 mb-12">
+            <a href="{{ url_for('live_camera') }}" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300 flex items-center">
+                Start Live Capture
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <a href="{{ url_for('image_upload') }}" class="bg-white text-gray-700 px-6 py-3 rounded-lg border hover:bg-gray-50 transition duration-300">
+                Upload Media
+            </a>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-8">Input Methods</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Live Camera Card -->
+            <a href="{{ url_for('live_camera') }}" class="input-card hover:cursor-pointer">
+                <div class="icon-circle">
+                    <i class="fas fa-camera text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Live Camera</h3>
+                <p class="text-gray-600">Interpret sign language in real-time using your camera</p>
+            </a>
+
+            <!-- Image Upload Card -->
+            <a href="{{ url_for('image_upload') }}" class="input-card hover:cursor-pointer">
+                <div class="icon-circle">
+                    <i class="fas fa-image text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Image Upload</h3>
+                <p class="text-gray-600">Upload images containing sign language gestures</p>
+            </a>
+
+            <!-- Video Upload Card -->
+            <a href="{{ url_for('video_upload') }}" class="input-card hover:cursor-pointer">
+                <div class="icon-circle">
+                    <i class="fas fa-video text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Video Upload</h3>
+                <p class="text-gray-600">Upload videos containing sign language gestures</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
